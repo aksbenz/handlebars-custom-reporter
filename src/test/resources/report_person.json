@@ -1,0 +1,159 @@
+[
+  {
+    "line": 4,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 649482,
+              "status": "passed"
+            },
+            "match": {
+              "location": "PersonStepDefs.setupReport(Scenario)"
+            }
+          }
+        ],
+        "line": 6,
+        "name": "01. Update Person Details",
+        "description": "",
+        "id": "person-api;01.-update-person-details",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 78617,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "Member with Entity \"5509550447\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "5509550447",
+                  "offset": 20
+                }
+              ],
+              "location": "PersonStepDefs.memberWithEntity(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "output": [
+              "Post Request Body: {\"source\":\"VMP\",\"uuid\":\"aa7b30ca-e3bc-4853-accb-90934b77050b\",\"entityNumber\":\"5509550447\",\"bankDetails\":{\"bsbNumber\":\"123456\",\"bankName\":\"AB Bank\",\"accountName\":\"AccountName\",\"accountNumber\":\"345667865\"}}"
+            ],
+            "embeddings": [
+              {
+                "data": "eyJzb3VyY2UiOiJWTVAiLCJ1dWlkIjoiYWE3YjMwY2EtZTNiYy00ODUzLWFjY2ItOTA5MzRiNzcwNTBiIiwiZW50aXR5TnVtYmVyIjoiNTUwOTU1MDQ0NyIsImJhbmtEZXRhaWxzIjp7ImJzYk51bWJlciI6IjEyMzQ1NiIsImJhbmtOYW1lIjoiQUIgQmFuayIsImFjY291bnROYW1lIjoiQWNjb3VudE5hbWUiLCJhY2NvdW50TnVtYmVyIjoiMzQ1NjY3ODY1In19",
+                "mime_type": "application/json"
+              }
+            ],
+            "result": {
+              "duration": 900953679,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "I update bank details",
+            "match": {
+              "location": "PersonStepDefs.iUpdateBankDetails()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "error_message": "java.lang.AssertionError: Post Status\nExpected: \"success\"\n     but: was \"Success\"\r\n\tat org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)\r\n\tat org.junit.Assert.assertThat(Assert.java:956)\r\n\tat api.person.PersonStepDefs.responseIs(PersonStepDefs.java:54)\r\n\tat ✽.Response is \"success\"(api/person/PersonAPI.feature:9)\r\n",
+              "duration": 33072197,
+              "status": "failed"
+            },
+            "line": 9,
+            "name": "Response is \"success\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "success",
+                  "offset": 13
+                }
+              ],
+              "location": "PersonStepDefs.responseIs(String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 239012,
+              "status": "passed"
+            },
+            "match": {
+              "location": "PersonStepDefs.setupReport(Scenario)"
+            }
+          }
+        ],
+        "line": 11,
+        "name": "02. Retrieve Person Details",
+        "description": "",
+        "id": "person-api;02.-retrieve-person-details",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 118518,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "Member with Entity \"5509550447\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "5509550447",
+                  "offset": 20
+                }
+              ],
+              "location": "PersonStepDefs.memberWithEntity(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "output": [
+              "Response: {\"source\":\"VMP\",\"uuid\":\"2bd05b27-63b5-4271-96c2-8b9f273f47a3\",\"entityNumber\":\"5509550447\",\"bankDetails\":{\"bsbNumber\":\"123456\",\"bankName\":\"AB Bank\",\"accountName\":\"AccountName\",\"accountNumber\":\"345667865\"}}"
+            ],
+            "result": {
+              "duration": 958641382,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "I retrieve bank details",
+            "match": {
+              "location": "PersonStepDefs.iRetrieveBankDetails()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "error_message": "java.lang.AssertionError: bsbNumber\nExpected: \"123457\"\n     but: was \"123456\"\r\n\tat org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)\r\n\tat org.junit.Assert.assertThat(Assert.java:956)\r\n\tat api.person.PersonStepDefs.bankDetailsAreCorrect(PersonStepDefs.java:82)\r\n\tat ✽.Bank details are correct(api/person/PersonAPI.feature:14)\r\n",
+              "duration": 37809383,
+              "status": "failed"
+            },
+            "line": 14,
+            "name": "Bank details are correct",
+            "match": {
+              "location": "PersonStepDefs.bankDetailsAreCorrect()"
+            },
+            "keyword": "And "
+          }
+        ]
+      }
+    ],
+    "name": "Person API",
+    "description": "",
+    "id": "person-api",
+    "keyword": "Feature",
+    "uri": "api/person/PersonAPI.feature",
+    "tags": []
+  }
+]
